@@ -3,7 +3,6 @@ package tao
 import (
 	"crypto/rand"
 	"crypto/tls"
-	"flag"
 	"net"
 	"os"
 	"sync"
@@ -13,7 +12,6 @@ import (
 )
 
 func init() {
-	flag.Parse()
 	netIdentifier = NewAtomicInt64(0)
 	tlsWrapper = func(conn net.Conn) net.Conn {
 		return conn
